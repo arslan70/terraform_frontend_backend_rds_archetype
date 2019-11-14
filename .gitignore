@@ -1,2 +1,10 @@
-.terragrunt-cache/
-/.terragrunt-cache/
+.*.sw?
+.idea
+terragrunt.iml
+vendor
+.terraform
+.vscode
+*.tfstate
+*.tfstate.backup
+*.out
+.terragrunt-cache
