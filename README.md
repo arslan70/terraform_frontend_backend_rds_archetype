@@ -1,6 +1,6 @@
 # Infrastructure code for a typical environment with frontend, backend and RDS
 ## Description of our environment
-###ui
+### ui
 
 A user interface served as static files
 
@@ -9,7 +9,7 @@ domain: www.acme.com
 port: 80/443
 exposed to the internet: yes
 
-###api
+### api
 
 A stateless RESTful API server to which the UI connects to get data
 image: acme/api
@@ -20,13 +20,13 @@ expected env vars:
 POSTGRES_URL: url of the postgres instance
 METRICS_URL: url of the prometheus instance
 
-###db
+### db
 
 A PostgreSQL database
 port: 5432
 exposed to the internet: no
 
-###metrics
+### metrics
 A prometheus container collecting metrics
 port: 80
 exposed to the internet: no
