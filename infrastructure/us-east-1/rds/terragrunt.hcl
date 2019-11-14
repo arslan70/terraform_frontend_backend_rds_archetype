@@ -7,7 +7,7 @@ include {
 }
 
 dependencies {
-  paths = ["../vpc", "../security-group_5"]
+  paths = ["../vpc", "../security-group_rds"]
 }
 
 dependency "vpc" {
@@ -15,7 +15,7 @@ dependency "vpc" {
 }
 
 dependency "security-group_5" {
-  config_path = "../security-group_5"
+  config_path = "../security-group_rds"
 }
 
 ###########################################################
@@ -41,15 +41,15 @@ inputs = {
 
   # The database engine to use
   # type: string
-  engine = "mysql"
+  engine = "postgresql"
 
   # The engine version to use
   # type: string
-  engine_version = "5.7.19"
+  engine_version = "9.5.2"
 
   # The family of the DB parameter group
   # type: string
-  family = "mysql5.7"
+  family = ""
 
   # The name of the RDS instance, if omitted, Terraform will assign a random, unique identifier
   # type: string
@@ -65,7 +65,7 @@ inputs = {
 
   # Specifies the major version of the engine that this option group should be associated with
   # type: string
-  major_engine_version = "5.7"
+  major_engine_version = ""
 
   # Specifies if the RDS instance is multi-AZ
   # type: bool
@@ -77,7 +77,7 @@ inputs = {
 
   # The port on which the DB accepts connections
   # type: string
-  port = "3306"
+  port = "5432"
 
   # Username for the master DB user
   # type: string
@@ -85,7 +85,7 @@ inputs = {
 
   # List of VPC security groups to associate
   # type: list(string)
-  vpc_security_group_ids = [dependency.security-group_5.outputs.this_security_group_id]
+  vpc_security_group_ids = [dependency.security-group_rds.outputs.this_security_group_id]
 
   
 }

@@ -7,7 +7,7 @@ include {
 }
 
 dependencies {
-  paths = ["../vpc", "../security-group_2"]
+  paths = ["../vpc", "../security-group_alb"]
 }
 
 dependency "vpc" {
@@ -15,7 +15,7 @@ dependency "vpc" {
 }
 
 dependency "security-group_2" {
-  config_path = "../security-group_2"
+  config_path = "../security-group_alb"
 }
 
 ###########################################################
@@ -29,7 +29,7 @@ inputs = {
 
   # A list of listener blocks
   # type: list(map(string))
-  listener = [{"instance_port": "80", "instance_protocol": "http", "lb_port": "80", "lb_protocol": "http"}]
+  listener = {"instance_port": "80", "instance_protocol": "http", "lb_port": "80", "lb_protocol": "http"}
 
   # The name of the ELB
   # type: string
@@ -37,7 +37,7 @@ inputs = {
 
   # A list of security group IDs to assign to the ELB
   # type: list(string)
-  security_groups = [dependency.security-group_2.outputs.this_security_group_id]
+  security_groups = [dependency.security-group_alb.outputs.this_security_group_id]
 
   # A list of subnet IDs to attach to the ELB
   # type: list(string)
