@@ -57,7 +57,7 @@ inputs = {
 
   # A list of subnet IDs to launch resources in
   # type: list(string)
-  vpc_zone_identifier = dependency.vpc.outputs.public_subnets
+  vpc_zone_identifier = dependency.vpc.outputs.private_subnets
 
   
 }
