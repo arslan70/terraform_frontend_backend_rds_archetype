@@ -65,5 +65,8 @@ $ terragrunt apply
 
 After the confirmation your infrastructure should be created.
 
+## Architecture Diagram
 
- 
+![Alt text](architecture_diagram.svg)
+<img src="./controllers_brief.svg"> 
+  
